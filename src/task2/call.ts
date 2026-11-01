@@ -35,5 +35,22 @@ export async function callPostAPI(name : string, document : string){
     await issuePass("http://localhost:3000/passes", token, name, document);
 }
 
-// await callPostAPI("Ivan Horvat","HR-12345").catch(error => console.log(error));
-// await callGetAPI("8e9b138f-bfc7-4c14-bb6a-0becf184f546").catch(error => console.log(error));
+
+/*
+
+// Primjeri
+
+await callPostAPI("Ivan Horvat","HR-12345").catch(error => console.log(error));
+await callPostAPI("Jan Burić","HR-12345").catch(error => console.log(error));
+await callPostAPI("Petar Veliki","HR-65432").catch(error => console.log(error));
+await callPostAPI("Ivan Horvat","HR-98765").catch(error => console.log(error));
+await callPostAPI("Petar Veliki","HR-34567").catch(error => console.log(error));
+await callPostAPI("Matea Miočić","HR-65432").catch(error => console.log(error));
+await callPostAPI("Ana Horvat","HR-12345").catch(error => console.log(error));
+await callPostAPI("Ilija Vrić","HR-98765").catch(error => console.log(error));
+await callPostAPI("Filip Edna","HR-34567").catch(error => console.log(error));
+await callPostAPI("Đurđica Pačić","HR-12345").catch(error => console.log(error));
+
+// await callGetAPI("[ID PROPUSNICE]").catch(error => console.log(error));
+
+*/
