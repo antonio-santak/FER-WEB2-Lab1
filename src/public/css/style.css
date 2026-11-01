@@ -1,7 +1,94 @@
+*{
+    box-sizing: border-box;
+}
+
 table, td, th {
   border: 1px solid;
 }
 
+table{
+    width: 100%;
+}
+
+td{
+    padding: 0.5rem;
+    text-align: center;
+}
+
+th{
+    padding: 1rem;
+}
+
+tbody tr:nth-child(odd){
+    background-color: #ddd;
+}
+
+button{
+    border: none;
+    background-color: black;
+    color: white;
+    padding: 1rem;
+    cursor: pointer;
+    border-radius: 10rem;
+    text-transform: uppercase;
+}
+
 table {
   border-collapse: collapse;
+}
+
+body{
+    font-family: sans-serif;
+    margin: 0;
+    padding: 1rem;
+    min-height: 100vh;
+}
+
+.pass_container{
+    width: 33vw;
+    min-width: 400px;
+    min-height: 50vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 2rem;
+}
+
+.pass_detail{
+    text-align: center;
+}
+
+.pass_detail div{
+    background-color: rgba(255, 255, 255, 0.5);
+    margin-bottom: 0.25rem;
+    padding: 0.5rem;
+    margin-right: 1rem;
+    margin-left: 1rem;
+}
+
+.pass_detail div:first-child{
+    border-top-left-radius: 1rem;
+    border-top-right-radius: 1rem;
+}
+
+.pass_detail div:last-child{
+    border-bottom-left-radius: 1rem;
+    border-bottom-right-radius: 1rem;
+}
+
+.pass_detail p{
+    margin: 0;
+}
+
+.label{
+    font-weight: bold;
+    margin-bottom: 8px !important;
+}
+
+.active_pass{
+    background-color: rgb(130, 168, 255);
+}
+
+.cancelled_pass{
+    background-color: rgb(255, 130, 130);
 }

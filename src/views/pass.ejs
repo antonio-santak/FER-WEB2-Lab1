@@ -4,12 +4,33 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Propusnica - FER WEB2 Lab1</title>
+    <link rel="stylesheet" href="/css/style.css">
 </head>
-<body>
-    <p>ID: <%= pass.id %></p>  
-    <p>Name: <%= pass.name %></p>  
-    <p>Document: <%= pass.document %></p>  
-    <p>Issued At: <%= pass.issued_at %></p>  
-    <p>Status: <%= pass.status %></p>  
+<body style="display: flex; justify-content: center; align-items: center;">
+    <div class="pass_container <%= String(pass.status).toLowerCase() === 'active' ? 'active' : 'cancelled' %>_pass">
+        <h4 style="text-decoration: underline;">PROPUSNICA</h4>
+        <div class="pass_detail">
+            <div>
+                <p class="label">ID</p>
+                <p><%= pass.id %></p>
+            </div>
+            <div>
+                <p class="label">Ime i prezime</p>
+                <p><%= pass.name %></p>
+            </div>
+            <div>
+                <p class="label">Dokument izdavanja</p>
+                <p><%= pass.document %></p>
+            </div>
+            <div>
+                <p class="label">Vrijeme izdavanja</p>
+                <p><%= pass.issued_at %></p>
+            </div>
+            <div>
+                <p class="label">Status</p>
+                <p><%= pass.status %></p>
+            </div>
+        </div>
+    </div>
 </body>
 </html>

@@ -34,7 +34,7 @@ app.use(
         auth0Logout: true,
         idpLogout: true,
         secret: process.env.AUTH_SECRET,
-        baseURL: config.baseURL,
+        baseURL: process.env.NODE_ENV === 'development' ? `http://localhost:${port}` : config.baseURL,
         clientID: process.env.AUTH_CLIENT_ID,
         issuerBaseURL: process.env.ISSUER_BASE_URL
     })

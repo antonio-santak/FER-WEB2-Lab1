@@ -7,25 +7,28 @@
     <link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
-    <p>Total passes: <%= totalPasses %></p>
-    <p>Active passes: <%= activePasses %></p>
+    <h1>FER WEB2 Lab1</h1>
+    <h2>Početna</h2>
+
+    <p>Ukupan broj propusnica: <%= totalPasses %></p>
+    <p>Broj aktivnih propusnica: <%= activePasses %></p>
     <% if (signedIn && user != null) { %>
-        <a href="/logout">Sign out</a>
+        <a href="/logout">Odjava</a>
         <p>Pregled propusnica, poništavanje i brisanje pojedine propusnice</p>
         <table>
             <thead>
                 <tr>
                     <th>ID</th>
-                    <th>Name</th>
-                    <th>Document</th>
-                    <th>Issued At</th>
+                    <th>Ime</th>
+                    <th>Dokument</th>
+                    <th>Vrijeme izdavanja</th>
                     <th>Status</th>
                 </tr>
             </thead>
             <tbody>
                 <% passes.forEach(pass => { %>
                     <tr>
-                        <td><%= pass.id %></td>
+                        <td><a href="/pass/<%= pass.id %>" target="_blank"><%= pass.id %></a></td>
                         <td><%= pass.name %></td>
                         <td><%= pass.document %></td>
                         <td><%= pass.issued_at %></td>
@@ -45,8 +48,8 @@
             </tbody>
         </table>
     <% } else { %>
-        <p>You aren't signed in.</p>
-        <a href="/login">Sign in</a>
+        <p>Niste prijavljeni!</p>
+        <a href="/login">Prijava</a>
     <% } %>
       
 </body>
