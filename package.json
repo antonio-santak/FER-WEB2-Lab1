@@ -1,0 +1,29 @@
+{
+    "type": "module",
+    "dependencies": {
+        "dotenv": "^18.0.9",
+        "ejs": "^7.0.2",
+        "express": "^5.3.0",
+        "express-oauth2-jwt-bearer": "^1.11.0",
+        "express-openid-connect": "^2.20.2",
+        "pg": "^8.23.1",
+        "qrcode": "^1.5.4",
+        "shx": "^0.4.0"
+    },
+    "devDependencies": {
+        "@types/express": "^5.0.6",
+        "@types/node": "^26.6.6",
+        "@types/openid-client": "^3.1.6",
+        "@types/pg": "^8.23.1",
+        "@types/qrcode": "^1.5.6",
+        "typescript": "^7.0.2"
+    },
+    "scripts": {
+        "build": "npm run clean && tsc && npm run copyfiles",
+        "copyfiles": "shx mkdir -p dist/public dist/views && shx cp -r src/public/. dist/public/ && shx cp -r src/views/. dist/views/",
+        "clean": "shx rm -rf dist",
+        "start": "node dist/app.js",
+        "machine": "node dist/task2/call.js",
+        "dev": "npm run clean && npm run copyfiles && npx tsx watch src/app.ts"
+    }
+}

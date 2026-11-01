@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Početna - FER WEB2 Lab1</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <p>Total passes: <%= totalPasses %></p>
+    <p>Active passes: <%= activePasses %></p>
+    <% if (signedIn && user != null) { %>
+        <a href="/logout">Sign out</a>
+        <p>Pregled propusnica, poništavanje i brisanje pojedine propusnice</p>
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Document</th>
+                    <th>Issued At</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% passes.forEach(pass => { %>
+                    <tr>
+                        <td><%= pass.id %></td>
+                        <td><%= pass.name %></td>
+                        <td><%= pass.document %></td>
+                        <td><%= pass.issued_at %></td>
+                        <td><%= pass.status %></td>
+                        <td>
+                            <form action="/pass/<%= pass.id %>/cancel" method="post">
+                                <button type="submit">Deactivate</button>
+                            </form>
+                        </td>
+                        <td>
+                            <form action="/pass/<%= pass.id %>/delete" method="post">
+                                <button type="submit">Delete</button>
+                            </form>
+                        </td>
+                    </tr>
+                <% }) %>
+            </tbody>
+        </table>
+    <% } else { %>
+        <p>You aren't signed in.</p>
+        <a href="/login">Sign in</a>
+    <% } %>
+      
+</body>
+</html>
